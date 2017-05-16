@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Hosting;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
 
 namespace TimeTracker051617
 {
@@ -16,7 +12,6 @@ namespace TimeTracker051617
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
-                .UseApplicationInsights()
                 .Build();
 
             host.Run();
