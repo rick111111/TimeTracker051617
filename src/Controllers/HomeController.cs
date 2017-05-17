@@ -8,5 +8,10 @@ namespace TimeTracker051617.Controllers
         {
             return View();
         }
+
+        public IActionResult About()
+        {
+            return View();
+        }
     }
 }
