@@ -1,0 +1,9 @@
+@model IEnumerable<TimeSlice>
+
+@foreach (var p in Model)
+{
+    <div>
+        <h3>@p.Duration</h3>
+        @p.Category
+    </div>
+}
