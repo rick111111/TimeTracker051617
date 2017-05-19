@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace TimeTracker051617.Migrations
 {
@@ -14,7 +13,7 @@ namespace TimeTracker051617.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Sqlite:Autoincrement", true),
                     Category = table.Column<string>(nullable: true),
                     DataSource = table.Column<string>(nullable: true),
                     Duration = table.Column<TimeSpan>(nullable: false),

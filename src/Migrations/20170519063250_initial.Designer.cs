@@ -8,14 +8,13 @@ using TimeTracker051617.Models;
 namespace TimeTracker051617.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170519054820_initial")]
+    [Migration("20170519063250_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .HasAnnotation("ProductVersion", "1.1.2")
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "1.1.2");
 
             modelBuilder.Entity("TimeTracker051617.Models.TimeSlice", b =>
                 {
