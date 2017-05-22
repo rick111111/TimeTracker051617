@@ -17,13 +17,21 @@ namespace TimeTracker051617.Models
                 context.TimeSlices.AddRange(
                     new TimeSlice
                     {
+                        Id = 1,
                         Duration = TimeSpan.FromMinutes(15),
                         Category = "Internet"
                     },
                     new TimeSlice
                     {
+                        Id = 2,
                         Duration = TimeSpan.FromMinutes(25),
                         Category = "Coding"
+                    },
+                    new TimeSlice
+                    {
+                        Id = 3,
+                        Duration = TimeSpan.FromMinutes(40),
+                        Category = "Happy Time"
                     });
 
                 context.SaveChanges();

@@ -26,9 +26,10 @@ namespace TimeTracker051617
             services.AddMvc();
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                // options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-                options.UseSqlite("Data Source=timeslice.db"));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                // options.UseSqlite("Data Source=timeslice.db"));
 
+            // services.AddTransient<ITimeSliceRepository, FakeTimeSliceRepository>();
             services.AddTransient<ITimeSliceRepository, EFTimeSliceRepository>();
         }
 
@@ -38,6 +39,7 @@ namespace TimeTracker051617
             loggerFactory.AddConsole();
 
             app.UseDeveloperExceptionPage();
+            app.UseDatabaseErrorPage();
             app.UseBrowserLink();
 
             app.UseStaticFiles();

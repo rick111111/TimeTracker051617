@@ -8,7 +8,7 @@ using TimeTracker051617.Models;
 namespace TimeTracker051617.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170519063250_initial")]
+    [Migration("20170521155836_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
