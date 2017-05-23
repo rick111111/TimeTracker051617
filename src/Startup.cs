@@ -26,8 +26,8 @@ namespace TimeTracker051617
             services.AddMvc();
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-                // options.UseSqlite("Data Source=timeslice.db"));
+                // options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlite("Data Source=timeslice.db"));
 
             // services.AddTransient<ITimeSliceRepository, FakeTimeSliceRepository>();
             services.AddTransient<ITimeSliceRepository, EFTimeSliceRepository>();
@@ -48,7 +48,7 @@ namespace TimeTracker051617
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=TimeSlice}/{action=List}/{id?}");
             });
 
             SeedData.EnsurePopulated(app);
