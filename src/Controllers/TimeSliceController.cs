@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using TimeTracker051617.Models;
 using System.Linq;
+using TimeTracker051617.Models.ViewModels;
 
 namespace TimeTracker051617.Controllers
 {
@@ -16,7 +17,18 @@ namespace TimeTracker051617.Controllers
 
         public ViewResult List(int page = 1)
         {
-            return View(repository.TimeSlices.Skip(PageSize * (page-1)).Take(PageSize));
+            TimeSliceListViewModel vm = new TimeSliceListViewModel()
+            {
+                TimeSlices = repository.TimeSlices.Skip(PageSize * (page - 1)).Take(PageSize),
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = PageSize,
+                    TotalItems = repository.TimeSlices.Count()
+                }
+            };
+
+            return View(vm);
         }
     }
 }

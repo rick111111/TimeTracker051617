@@ -1,9 +1,12 @@
-@model IEnumerable<TimeSlice>
+@model TimeSliceListViewModel
 
-@foreach (var p in Model)
+@foreach (var p in Model.TimeSlices)
 {
     <div>
-        <h3>@p.Duration</h3>
-        @p.Category
+        <h3>@p.Category</h3>
+        @p.SubCategory
+        <h4>@p.Duration.ToString("c")</h4>
     </div>
 }
+
+<div page-model="@Model.PagingInfo" page-action="List"></div>
